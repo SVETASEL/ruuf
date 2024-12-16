@@ -7,22 +7,29 @@
     <title>Panel Calculator</title>
   </head>
   <body>
-    <h1>Panel Calculator</h1>
-    <form id="panelForm">
-      <label for="roofWidth">Roof Width (m):</label><br />
-      <input type="number" id="roofWidth" name="roofWidth" required /><br />
+    <section class="form-wrap">
+      <h1>Panel Calculator</h1>
+      <form id="panelForm">
+        <label for="roofWidth">Roof Width (m):</label><br />
+        <input type="number" id="roofWidth" name="roofWidth" required /><br />
 
-      <label for="roofHeight">Roof Height (m):</label><br />
-      <input type="number" id="roofHeight" name="roofHeight" required /><br />
+        <label for="roofHeight">Roof Height (m):</label><br />
+        <input type="number" id="roofHeight" name="roofHeight" required /><br />
 
-      <label for="panelWidth">Panel Width (m):</label><br />
-      <input type="number" id="panelWidth" name="panelWidth" required /><br />
+        <label for="panelWidth">Panel Width (m):</label><br />
+        <input type="number" id="panelWidth" name="panelWidth" required /><br />
 
-      <label for="panelHeight">Panel Height (m):</label><br />
-      <input type="number" id="panelHeight" name="panelHeight" required /><br />
+        <label for="panelHeight">Panel Height (m):</label><br />
+        <input
+          type="number"
+          id="panelHeight"
+          name="panelHeight"
+          required
+        /><br />
 
-      <button type="submit">Calculate</button>
-    </form>
+        <button type="submit">Calculate</button>
+      </form>
+    </section>
 
     <div id="result"></div>
     <script src="script.js"></script>

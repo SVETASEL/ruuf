@@ -8,12 +8,18 @@ function calculatePanels(roofWidth, roofHeight, panelWidth, panelHeight) {
     throw new Error("All dimensions must be greater than 0");
   }
 
-  // Calcular y redondear el número de panels dependiendo de altura y longitud
-  const panelsInWidth = Math.floor(roofWidth / panelWidth);
-  const panelsInHeight = Math.floor(roofHeight / panelHeight);
+  // Calcular paneles en orientación original
+  const panelsInWidthOriginal = Math.floor(roofWidth / panelWidth);
+  const panelsInHeightOriginal = Math.floor(roofHeight / panelHeight);
+  const totalOriginal = panelsInWidthOriginal * panelsInHeightOriginal;
 
-  // Número de paneles
-  return panelsInWidth * panelsInHeight;
+  // Calcular paneles en orientación rotada
+  const panelsInWidthRotated = Math.floor(roofWidth / panelHeight);
+  const panelsInHeightRotated = Math.floor(roofHeight / panelWidth);
+  const totalRotated = panelsInWidthRotated * panelsInHeightRotated;
+
+  // Buscar orientacion más alta entre las dos
+  return Math.max(totalOriginal, totalRotated);
 }
 
 document

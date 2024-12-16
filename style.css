@@ -2,8 +2,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
 }
-form {
-  margin-bottom: 20px;
+.form-wrap {
+  width: 400px;
+  margin: 20px auto 20px auto;
 }
 input {
   margin: 5px 0;
