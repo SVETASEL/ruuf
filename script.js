@@ -1,9 +1,4 @@
-function calcularPanelesEnTecho(
-  roofWidth,
-  roofHeight,
-  panelWidth,
-  panelHeight
-) {
+function calculatePanels(roofWidth, roofHeight, panelWidth, panelHeight) {
   if (
     roofWidth <= 0 ||
     roofHeight <= 0 ||
@@ -13,20 +8,20 @@ function calcularPanelesEnTecho(
     throw new Error("All dimensions must be greater than 0");
   }
 
-  // Calculate how many panels fit in width and height
+  // Calcular y redondear el número de panels dependiendo de altura y longitud
   const panelsInWidth = Math.floor(roofWidth / panelWidth);
   const panelsInHeight = Math.floor(roofHeight / panelHeight);
 
-  // Total number of panels that fit
+  // Número de paneles
   return panelsInWidth * panelsInHeight;
 }
 
 document
   .getElementById("panelForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from refreshing the page
+    event.preventDefault(); // Prevenir que el formulario se envia antes
 
-    // Get input values
+    // Recibir y parsear las dimensiones para calcular número de paneles
     const roofWidth = parseFloat(document.getElementById("roofWidth").value);
     const roofHeight = parseFloat(document.getElementById("roofHeight").value);
     const panelWidth = parseFloat(document.getElementById("panelWidth").value);
@@ -35,15 +30,15 @@ document
     );
 
     try {
-      // Calculate the result
-      const result = calcularPanelesEnTecho(
+      // Calcular número de paneles
+      const result = calculatePanels(
         roofWidth,
         roofHeight,
         panelWidth,
         panelHeight
       );
 
-      // Display the result
+      // Mostrar el resultado
       document.getElementById(
         "result"
       ).textContent = `The roof can fit ${result} panels.`;
